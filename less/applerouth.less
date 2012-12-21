@@ -1,0 +1,291 @@
+
+	@import "variables.less";
+	@import "mixins.less";
+
+	/* Old utility classes */
+	
+	.nowrap {
+		white-space: nowrap;
+	}
+	
+	.align-right {
+		text-align: right;
+	}
+
+	.align-left {
+		text-align: left;
+	}	
+
+	.align-center {
+		text-align: center;
+	}
+	
+	.float-right {
+		float: right;
+		display: inline;
+	}
+		
+	.float-left {
+		float: left;
+		display: inline;
+	}
+	
+	/* Include design fonts. */
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenm.eot');
+		src: url('/fonts/avenm.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenm.woff') format('woff'),
+			 url('/fonts/avenm.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenbl.eot');
+		src: url('/fonts/avenbl.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenbl.woff') format('woff'),
+			 url('/fonts/avenbl.ttf') format('truetype');
+		font-weight: 900;
+		font-style: normal;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenblo.eot');
+		src: url('/fonts/avenblo.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenblo.woff') format('woff'),
+			 url('/fonts/avenblo.ttf') format('truetype');
+		font-weight: 900;
+		font-style: oblique;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenh.eot');
+		src: url('/fonts/avenh.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenh.woff') format('woff'),
+			 url('/fonts/avenh.ttf') format('truetype');
+		font-weight: 800;
+		font-style: normal;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenho.eot');
+		src: url('/fonts/avenho.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenho.woff') format('woff'),
+			 url('/fonts/avenho.ttf') format('truetype');
+		font-weight: 800;
+		font-style: oblique;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenl.eot');
+		src: url('/fonts/avenl.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenl.woff') format('woff'),
+			 url('/fonts/avenl.ttf') format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	
+	@font-face {
+		font-family: 'avenir';
+		src: url('/fonts/avenlo.eot');
+		src: url('/fonts/avenlo.eot?#iefix') format('embedded-opentype'),
+			 url('/fonts/avenlo.woff') format('woff'),
+			 url('/fonts/avenlo.ttf') format('truetype');
+		font-weight: 300;
+		font-style: oblique;
+	}
+	
+	@borderWidth: 2px;
+	@verticalGutter: 15px;
+	@alternateFont: avenir;
+	
+	.border-top {
+		border-top: @borderWidth solid @grayLighter;
+	}
+	
+	.border-bottom {
+		border-bottom: @borderWidth solid @grayLighter;
+	}
+	
+	.border-right {
+		border-right: @borderWidth solid @grayLighter;
+	}
+	
+	.border-left {
+		border-left: @borderWidth solid @grayLighter;
+	}
+	
+	.spacing-top, .block {
+		margin-top: @verticalGutter;
+	}
+	
+	.spacing-bottom {
+		margin-bottom: @verticalGutter;
+	}
+	
+	.left-rail > div {
+		.border-top;
+	}
+	
+	.main-nav .container {
+		padding-bottom: @verticalGutter;
+		.border-bottom;
+	}
+	
+	.main-nav .navbar-inner {
+		background: white;
+		box-shadow: none;
+		border: none;
+	}
+	
+	.main-nav .brand {
+		padding: 0px 15px 0px 0px;
+		position: relative;
+		margin-left: 0px;
+		top: -5px;
+	}
+	
+	.main-nav .nav > li > a {
+		font-family: @alternateFont;
+		text-shadow: none;
+		font-size: 17px;
+		color: #333;
+	}
+	
+	.medium {
+		font-weight: 500;
+	}
+	
+	.heavy {
+		font-weight: 800;
+	}
+	
+	.lead {
+		font-family: @alternateFont;
+	}
+	
+	.main-links {
+		margin-top: 5px;
+	}
+	
+	.main-links a {
+		display: block;
+		padding: 0px 10px 0px 10px;
+		font-weight: 500;
+		font-family: 'Avenir';
+		border-right: 1px solid #ddd;
+	}
+	
+	#content {
+		position: relative;
+	}
+	
+	.footer a,
+	.account-links a {
+		padding: 0px 10px 0px 10px;
+	}
+	 
+	.main-links a:first-child {
+		border-right: none;
+	}
+	
+	#featured {
+		top: -2px;
+		margin: auto;
+		max-width: 1200px;
+		position: relative;
+	}
+
+	.carousel .item {
+		height: 409px;
+		background-repeat: no-repeat;
+		background-position: top center; 
+	}
+	
+	.drop-shadow {
+		.box-shadow(1px 1px 5px rgba(0, 0, 0, 0.3))
+	}
+
+	.outer-border-box {
+		padding: 6px;
+		.border-radius(10px);
+		background: @grayLighter;
+	}
+	
+	.outer-border-box > * {
+		.clearfix;
+		.border-radius(4px);
+		.drop-shadow;
+		background: white;
+		padding: @verticalGutter;
+	}
+	
+	.carousel .outer-border-box {
+		background: rgba(0, 0, 0, 0.3);
+	}
+	
+	.account-panel .outer-border-box {
+		.spacing-top;
+	}
+	
+	.account-panel .outer-border-box h4 i {
+		color: @blue;
+	}
+	
+	.account-widget-heading {
+		font-size: 16px;
+		line-height: normal;
+		.border-radius(5px);
+		background: @blue;
+		color: white;
+		font-family: @alternateFont;
+		font-weight: normal;
+		padding: 5px;
+		margin-left: -@verticalGutter;
+		margin-right: -@verticalGutter;
+		margin-top: -@verticalGutter;
+	}
+	
+	.account-widget-heading * {
+		color: @white;
+	}
+	
+	.home-block {
+		padding: 0px @verticalGutter 0px @verticalGutter;
+		height: 200px;
+		color: white;
+	}
+	
+	.home-block h2 {
+		padding-top: 0px;
+		padding-bottom: 0px;
+		font-size: 24px;
+		text-shadow: 2px 2px 2px #000;
+	}
+	
+	.footer img {
+		width: 135px;
+		position: absolute;
+		bottom: 7px;
+		right: 0px;
+	}
+	
+	#content > h2:first-child {
+		font-size: 65px;
+		padding: 15px 0px 15px 0px;
+		border-bottom: 10px solid @green;
+		.medium;
+		color: @green;
+		line-height: normal;
+	}
+	
+	.underline {
+		border-bottom: 2px solid @grayLight
+	}
