@@ -29,6 +29,23 @@
 		float: left;
 		display: inline;
 	}
+
+	.radio-list .radio-list-selected * {
+		font-weight: bold;
+	}
+	
+	.checkbox-list td,
+	.radio-list td,
+	.radio-list li {
+		cursor: pointer;
+		padding: 5px;
+	}
+	
+	.checkbox-list .checkbox-list-highlighted td,
+	.radio-list .radio-list-selected td,
+	.radio-list .radio-list-selected li {
+		background-color: #EEE;
+	}
 	
 	/* Include design fonts. */
 	
@@ -130,8 +147,16 @@
 		margin-bottom: @verticalGutter;
 	}
 	
+	.no-margin-bottom {
+		margin-bottom: 0px;
+	}
+	
 	.left-rail > div {
 		.border-top;
+	}
+	
+	.left-rail > div:first-child {
+		border: none;
 	}
 	
 	.main-nav .container {
@@ -227,6 +252,10 @@
 		padding: @verticalGutter;
 	}
 	
+	.outer-border-box-green {
+		background: @green;
+	}
+	
 	.carousel .outer-border-box {
 		background: rgba(0, 0, 0, 0.3);
 	}
@@ -287,5 +316,32 @@
 	}
 	
 	.underline {
-		border-bottom: 2px solid @grayLight
+		border-bottom: 2px solid @grayLight;
+	}
+	
+	.solid-box {
+		padding: 15px;
+		.border-radius(5px);
+		.drop-shadow;
+		color: white;
+	}
+	
+	.solid-box-green {
+		background: @green;
+	}
+	
+	.date-icon {
+		text-align: center;
+		.solid-box;
+		.solid-box-green;
+		padding: 5px;
+	}
+	
+	.date-icon-day {
+		font-weight: 100;
+	}
+	
+	.date-icon .lead {
+		margin: 0px;
+		line-height: normal;
 	}
