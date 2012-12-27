@@ -20,10 +20,10 @@
 
 // Accent colors
 // -------------------------
-@blue:                  #02bff6;
-@blueDark:              #0064cd;
+@blueDark:              #105A8D;
+@blue:                  lighten(@blueDark, 3);
 @green:                 #227d00;
-@red:                   #b00e2f;
+@red:                   #9D1100;
 @yellow:                #ffc40d;
 @orange:                #ff6600;
 @pink:                  #c3325f;
@@ -88,11 +88,11 @@
 @btnBackgroundHighlight:            darken(@white, 10%);
 @btnBorder:                         #bbb;
 
-@btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackground:            	lighten(@linkColor, 3);
+@btnPrimaryBackgroundHighlight:     darken(@btnPrimaryBackground, 8);
 
-@btnInfoBackground:                 #5bc0de;
-@btnInfoBackgroundHighlight:        #2f96b4;
+@btnInfoBackground:                 lighten(@blue, 3);
+@btnInfoBackgroundHighlight:        darken(@btnInfoBackground, 8);
 
 @btnSuccessBackground:              #62c462;
 @btnSuccessBackgroundHighlight:     #51a351;
@@ -100,7 +100,7 @@
 @btnWarningBackground:              lighten(@orange, 15%);
 @btnWarningBackgroundHighlight:     @orange;
 
-@btnDangerBackground:               #ee5f5b;
+@btnDangerBackground:               @red;
 @btnDangerBackgroundHighlight:      #bd362f;
 
 @btnInverseBackground:              #444;
