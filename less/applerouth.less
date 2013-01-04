@@ -123,20 +123,24 @@
 	@verticalGutter: 15px;
 	@alternateFont: avenir;
 	
+	.text-link {
+		color: @textColor;
+	}
+	
 	.border-top {
-		border-top: @borderWidth solid @grayLighter;
+		border-top: @borderWidth solid @hrBorder;
 	}
 	
 	.border-bottom {
-		border-bottom: @borderWidth solid @grayLighter;
+		border-bottom: @borderWidth solid @hrBorder;
 	}
 	
 	.border-right {
-		border-right: @borderWidth solid @grayLighter;
+		border-right: @borderWidth solid @grayLight;
 	}
 	
 	.border-left {
-		border-left: @borderWidth solid @grayLighter;
+		border-left: @borderWidth solid @hrBorder;
 	}
 	
 	.spacing-top, .block {
@@ -151,6 +155,14 @@
 		margin-bottom: 0px;
 	}
 	
+	.normal-leading {
+		line-height: normal;
+	}
+	
+	.no-margin-top {
+		margin-top: 0px;
+	}
+	
 	.left-rail > div {
 		.border-top;
 	}
@@ -159,13 +171,8 @@
 		border: none;
 	}
 	
-	.main-nav .container {
-		padding-bottom: @verticalGutter;
-		.border-bottom;
-	}
-	
 	.main-nav .navbar-inner {
-		background: white;
+		background: none;
 		box-shadow: none;
 		border: none;
 	}
@@ -196,16 +203,25 @@
 		font-family: @alternateFont;
 	}
 	
-	.main-links {
-		margin-top: 5px;
+	.select-dropdown {
+		background: white;
+		border: 1px solid #ccc;
+		padding: 5px;
 	}
 	
 	.main-links a {
 		display: block;
-		padding: 0px 10px 0px 10px;
 		font-weight: 500;
-		font-family: 'Avenir';
-		border-right: 1px solid #ddd;
+		font-family: @alternateFont;
+		line-height: 35px;
+	}
+	
+	.main-links a.pull-left {
+		margin-right: 15px;
+	}
+	
+	.main-links a.pull-right {
+		margin-left: 15px;
 	}
 	
 	#content {
@@ -216,13 +232,9 @@
 	.account-links a {
 		padding: 0px 10px 0px 10px;
 	}
-	 
-	.main-links a:first-child {
-		border-right: none;
-	}
 	
 	#featured {
-		top: -2px;
+		top: -13px;
 		margin: auto;
 		max-width: 1200px;
 		position: relative;
@@ -249,11 +261,15 @@
 		.border-radius(4px);
 		.drop-shadow;
 		background: white;
-		padding: @verticalGutter;
+		padding: 15px;
 	}
 	
 	.outer-border-box-green {
 		background: @green;
+	}
+	
+	.outer-border-box-red {
+		background: @red;
 	}
 	
 	.carousel .outer-border-box {
@@ -290,6 +306,48 @@
 		padding: 0px @verticalGutter 0px @verticalGutter;
 		height: 200px;
 		color: white;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: right; 
+	}
+	
+	.home-block-sat {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c2.png);
+		background-color: #00BDF8;
+	}
+	
+	.home-block-act {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c5.png);
+		background-color: #3D7200;
+	}
+	
+	.home-block-academic {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c7.png);
+		background-color: #6E8831;
+	}
+	
+	.home-block-other {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c2.png);
+		background-color: #FF6800;
+	}
+	
+	.home-block-about {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c5.png);
+		background-color: #A90E2C;
+	}
+	
+	.home-block-jed {
+		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c7.png);
+		background-color: #2C2C11;
+	}
+	
+	.home-block:hover {
+		color: white;
+		text-decoration: none;
+	}
+	
+	.home-block h2:hover {
+		text-decoration: underline;
 	}
 	
 	.home-block h2 {
@@ -297,6 +355,14 @@
 		padding-bottom: 0px;
 		font-size: 24px;
 		text-shadow: 2px 2px 2px #000;
+		margin-bottom: 0px;
+	}
+	
+	.home-block p {
+		width: 90%;
+		font-family: @alternateFont;
+		font-weight: 200;
+		font-size: 16px;
 	}
 	
 	.footer img {
@@ -307,12 +373,22 @@
 	}
 	
 	#content > h2:first-child {
-		font-size: 65px;
-		padding: 15px 0px 15px 0px;
-		border-bottom: 10px solid @green;
+		font-size: 55px;
+		padding-bottom: @verticalGutter;
+		border-bottom: 6px solid @green;
 		.medium;
 		color: @green;
 		line-height: normal;
+	}
+	
+	#content > h2.red:first-child {
+		color: @red;
+		border-color: @red;
+	}
+	
+	.menu-subtitle {
+		font-family: @sansFontFamily;
+		color: @textColor;
 	}
 	
 	.underline {
@@ -324,10 +400,25 @@
 		.border-radius(5px);
 		.drop-shadow;
 		color: white;
+		.lead;
+		margin: 0px;
 	}
 	
 	.solid-box-green {
 		background: @green;
+	}
+	
+	.calendar-item td:first-child {
+		width: 65px;
+	}
+	
+	.calendar-item h4 {
+		margin: 0px;
+	}
+	
+	.calendar-item td {
+		padding-top: @verticalGutter;
+		padding-bottom: @verticalGutter;
 	}
 	
 	.date-icon {
@@ -344,4 +435,93 @@
 	.date-icon .lead {
 		margin: 0px;
 		line-height: normal;
+	}
+	
+	.bookstore-item > div:first-child {
+		line-height: 228px;
+		background: @grayLighter;
+	}
+	
+	.more-link {
+		display: block;
+		.spacing-top;
+	}
+	
+	.nav-media > li > a {
+		line-height: normal;
+	}
+	
+	.no-padding {
+		padding: 0px;
+	}
+	
+	#feature-list {
+		padding: 0px;
+		list-style: none;
+		margin: 0px;
+	}
+	
+	.feature-list-item a {
+		padding: 10px;
+		font-size: 123.1%;
+		color: white;
+		text-decoration: none;
+		text-transform: lowercase;
+		display: block; 
+		vertical-align: middle;
+		margin-bottom: 5px;
+	}
+
+	#feature-list-item-1 a {
+		background-color: #3A3D27;
+	}
+
+	#feature-list-item-1 a:hover {
+		background-color: #6C6E5E;
+	}
+
+	#feature-list-item-2 a {
+		background-color: #437200;
+	}
+
+	#feature-list-item-2 a:hover {
+		background-color: #7B9045;
+	}
+	
+	#feature-list-item-3 a {
+		background-color: #70883A;
+	}
+	
+	#feature-list-item-3 a:hover {
+		background-color: #98A26E;
+	}
+	
+	#feature-list-item-4 a {
+		background-color: #FF4E24;
+	}
+
+	#feature-list-item-4 a:hover {
+		background-color: #EF865F;
+	}
+	
+	#feature-list-item-5 a {
+		background-color: #D70000;
+	}
+	
+	#feature-list-item-5 a:hover {
+		background-color: #D15643;
+	}
+	
+	#feature-list-item-6 a {
+		background-color: #780013;
+	}
+	
+	#feature-list-item-6 a:hover {
+		background-color: #8F4A4F;
+	}
+	
+	#purchase-overlay {
+		position: absolute;
+		top: 0px;
+		right: 0px;
 	}
