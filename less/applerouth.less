@@ -136,11 +136,18 @@
 	}
 	
 	.border-right {
-		border-right: @borderWidth solid @grayLight;
+		border-right: @borderWidth solid @hrBorder;
 	}
 	
 	.border-left {
 		border-left: @borderWidth solid @hrBorder;
+	}
+	
+	.border-all {
+		.border-top;
+		.border-bottom;
+		.border-right;
+		.border-left;
 	}
 	
 	.spacing-top, .block {
@@ -171,10 +178,14 @@
 		border: none;
 	}
 	
+	.main-nav .container {
+		padding-bottom: 10px;
+		border-bottom: 2px solid @hrBorder;
+	}
+	
 	.main-nav .navbar-inner {
-		background: none;
 		box-shadow: none;
-		border: none;
+		margin-bottom: @verticalGutter;
 	}
 	
 	.main-nav .brand {
@@ -203,10 +214,20 @@
 		font-family: @alternateFont;
 	}
 	
+	.truncate {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
 	.select-dropdown {
 		background: white;
 		border: 1px solid #ccc;
 		padding: 5px;
+	}
+	
+	.select-dropdown .dropdown-toggle {
+		.truncate;
 	}
 	
 	.main-links a {
@@ -234,7 +255,6 @@
 	}
 	
 	#featured {
-		top: -13px;
 		margin: auto;
 		max-width: 1200px;
 		position: relative;
@@ -311,24 +331,30 @@
 		background-position: right; 
 	}
 	
+	@colorSAT: #00BDF8;
+	@colorACT: #3D7200;
+	@colorAcademic: #6E8831;
+	@colorOther: #FF6800;
+	
+	
 	.home-block-sat {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c2.png);
-		background-color: #00BDF8;
+		background-color: @colorSAT;
 	}
 	
 	.home-block-act {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c5.png);
-		background-color: #3D7200;
+		background-color: @colorACT;
 	}
 	
 	.home-block-academic {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c7.png);
-		background-color: #6E8831;
+		background-color: @colorAcademic;
 	}
 	
 	.home-block-other {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c2.png);
-		background-color: #FF6800;
+		background-color: @colorOther;
 	}
 	
 	.home-block-about {
@@ -373,9 +399,10 @@
 	}
 	
 	#content > h2:first-child {
-		font-size: 55px;
+		font-size: 60px;
+		padding-left: 5px;
 		padding-bottom: @verticalGutter;
-		border-bottom: 6px solid @green;
+		border-bottom: 8px solid @green;
 		.medium;
 		color: @green;
 		line-height: normal;
@@ -391,6 +418,12 @@
 		color: @textColor;
 	}
 	
+	.nav-tabs > .active > a.gold,
+	.nav-tabs > li > a.gold {
+		font-color: @textColor;
+		background-color: #EDDA74;
+	}
+	
 	.underline {
 		border-bottom: 2px solid @grayLight;
 	}
@@ -401,7 +434,6 @@
 		.drop-shadow;
 		color: white;
 		.lead;
-		margin: 0px;
 	}
 	
 	.solid-box-green {
@@ -524,4 +556,43 @@
 		position: absolute;
 		top: 0px;
 		right: 0px;
+	}
+	
+	body.home .main-nav .container {
+		border: none;
+	}
+	
+	body.sat #content > h2:first-child {
+		color: @colorSAT;
+		border-color: @colorSAT;
+	}
+	
+	body.sat .outer-border-box-green {
+		background: @colorSAT;
+	}
+	
+	body.act #content > h2:first-child {
+		color: @colorACT;
+		border-color: @colorACT;
+	}
+	
+	body.act .outer-border-box-green {
+		background: @colorACT;
+	}
+	
+	body.psat #content > h2:first-child,
+	body.ssat #content > h2:first-child,
+	body.sat-subjects #content > h2:first-child,
+	body.gre #content > h2:first-child,
+	body.gmat #content > h2:first-child {
+		color: @colorOther;
+		border-color: @colorOther;
+	}
+	
+	body.psat .outer-border-box-green,
+	body.ssat .outer-border-box-green,
+	body.sat-subjects .outer-border-box-green,
+	body.gre .outer-border-box-green,
+	body.gmat .outer-border-box-green {
+		background: #ffffff;
 	}
