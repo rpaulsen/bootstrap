@@ -41,87 +41,19 @@
 		padding: 5px;
 	}
 	
+	.ui-dialog div.ui-dialog-content {
+		padding-top: 15px;
+	}
+	
 	.checkbox-list .checkbox-list-highlighted td,
 	.radio-list .radio-list-selected td,
 	.radio-list .radio-list-selected li {
 		background-color: #EEE;
 	}
 	
-	/* Include design fonts. */
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenm.eot');
-		src: url('/fonts/avenm.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenm.woff') format('woff'),
-			 url('/fonts/avenm.ttf') format('truetype');
-		font-weight: 500;
-		font-style: normal;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenbl.eot');
-		src: url('/fonts/avenbl.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenbl.woff') format('woff'),
-			 url('/fonts/avenbl.ttf') format('truetype');
-		font-weight: 900;
-		font-style: normal;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenblo.eot');
-		src: url('/fonts/avenblo.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenblo.woff') format('woff'),
-			 url('/fonts/avenblo.ttf') format('truetype');
-		font-weight: 900;
-		font-style: oblique;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenh.eot');
-		src: url('/fonts/avenh.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenh.woff') format('woff'),
-			 url('/fonts/avenh.ttf') format('truetype');
-		font-weight: 800;
-		font-style: normal;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenho.eot');
-		src: url('/fonts/avenho.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenho.woff') format('woff'),
-			 url('/fonts/avenho.ttf') format('truetype');
-		font-weight: 800;
-		font-style: oblique;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenl.eot');
-		src: url('/fonts/avenl.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenl.woff') format('woff'),
-			 url('/fonts/avenl.ttf') format('truetype');
-		font-weight: 300;
-		font-style: normal;
-	}
-	
-	@font-face {
-		font-family: 'avenir';
-		src: url('/fonts/avenlo.eot');
-		src: url('/fonts/avenlo.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/avenlo.woff') format('woff'),
-			 url('/fonts/avenlo.ttf') format('truetype');
-		font-weight: 300;
-		font-style: oblique;
-	}
-	
-	@borderWidth: 2px;
+	@borderWidth: 4px;
 	@verticalGutter: 15px;
-	@alternateFont: avenir;
+	@altFontFamilyHeavy: "Avenir LT W01 85 Heavy";
 	
 	.text-link {
 		color: @textColor;
@@ -178,6 +110,14 @@
 		border: none;
 	}
 	
+	.icon-facebook-sign {
+		color: #3B5998;
+	}
+	
+	.icon-twitter-sign {
+		color: #4099FF;
+	}
+	
 	.main-nav .container {
 		padding-bottom: 10px;
 		border-bottom: 2px solid @hrBorder;
@@ -196,22 +136,36 @@
 	}
 	
 	.main-nav .nav > li > a {
-		font-family: @alternateFont;
+		font-family: @altFontFamily;
 		text-shadow: none;
-		font-size: 17px;
+		font-size: 18px;
 		color: #333;
 	}
 	
 	.medium {
-		font-weight: 500;
+		font-family: "HelveticaNeueW01-65Medi";
 	}
 	
 	.heavy {
-		font-weight: 800;
+		font-family: "HelveticaNeueW01-85Heav";
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 100;
+		font-family: @altFontFamilyHeavy;
+		.medium {
+			font-family: @altFontFamily;
+		}
 	}
 	
 	.lead {
-		font-family: @alternateFont;
+		font-family: @altFontFamily;
+		.medium {
+			font-family: @altFontFamily;
+		}
+		.heavy {
+			font-family: @altFontFamilyHeavy;
+		}
 	}
 	
 	.truncate {
@@ -223,6 +177,7 @@
 	.select-dropdown {
 		background: white;
 		border: 1px solid #ccc;
+		font-size: @baseFontSize;
 		padding: 5px;
 	}
 	
@@ -230,10 +185,14 @@
 		.truncate;
 	}
 	
+	.left-rail h3,
+	.right-rail h4 {
+		line-height: normal;
+	}
+	
 	.main-links a {
 		display: block;
-		font-weight: 500;
-		font-family: @alternateFont;
+		font-family: @altFontFamily;
 		line-height: 35px;
 	}
 	
@@ -259,6 +218,16 @@
 		max-width: 1200px;
 		position: relative;
 	}
+	
+	.carousel .pagination {
+		position: absolute;
+		bottom: -10px;
+		left: 10px;
+	}
+	
+	.carousel .pagination .active {
+		display: inline;
+	}
 
 	.carousel .item {
 		height: 409px;
@@ -271,14 +240,14 @@
 	}
 
 	.outer-border-box {
-		padding: 6px;
+		padding: 5px;
 		.border-radius(10px);
 		background: @grayLighter;
 	}
 	
 	.outer-border-box > * {
 		.clearfix;
-		.border-radius(4px);
+		.border-radius(5px);
 		.drop-shadow;
 		background: white;
 		padding: 15px;
@@ -310,7 +279,7 @@
 		.border-radius(5px);
 		background: @blue;
 		color: white;
-		font-family: @alternateFont;
+		font-family: @altFontFamily;
 		font-weight: normal;
 		padding: 5px;
 		margin-left: -@verticalGutter;
@@ -335,7 +304,6 @@
 	@colorACT: #3D7200;
 	@colorAcademic: #6E8831;
 	@colorOther: #FF6800;
-	
 	
 	.home-block-sat {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c2.png);
@@ -380,14 +348,13 @@
 		padding-top: 0px;
 		padding-bottom: 0px;
 		font-size: 24px;
-		text-shadow: 2px 2px 2px #000;
+		text-shadow: 1px 1px 1px #000;
 		margin-bottom: 0px;
 	}
 	
 	.home-block p {
 		width: 90%;
-		font-family: @alternateFont;
-		font-weight: 200;
+		font-family: @altFontFamily;
 		font-size: 16px;
 	}
 	
@@ -399,13 +366,17 @@
 	}
 	
 	#content > h2:first-child {
-		font-size: 60px;
+		font-size: @baseFontSize * 5;
 		padding-left: 5px;
-		padding-bottom: @verticalGutter;
+		padding-bottom: 5px;
 		border-bottom: 8px solid @green;
-		.medium;
 		color: @green;
+		font-family: @altFontFamily;
 		line-height: normal;
+	}
+	
+	#content > h2:first-child small {
+		font-size: @baseFontSize * 1.5;
 	}
 	
 	#content > h2.red:first-child {
@@ -562,6 +533,10 @@
 		border: none;
 	}
 	
+	body.home .navbar-inner {
+		.no-margin-bottom;	
+	}
+	
 	body.sat #content > h2:first-child {
 		color: @colorSAT;
 		border-color: @colorSAT;
@@ -594,5 +569,5 @@
 	body.sat-subjects .outer-border-box-green,
 	body.gre .outer-border-box-green,
 	body.gmat .outer-border-box-green {
-		background: #ffffff;
+		background: #ff6800;
 	}
