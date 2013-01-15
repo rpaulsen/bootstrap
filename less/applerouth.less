@@ -51,9 +51,14 @@
 		background-color: #EEE;
 	}
 	
-	@borderWidth: 4px;
+	@borderWidth: 2px;
 	@verticalGutter: 15px;
 	@altFontFamilyHeavy: "Avenir LT W01 85 Heavy";
+	
+	.table th, th, strong, dt, .label, .badge {
+		font-family: 'HelveticaNeueW01-65Medi';
+		font-weight: 100;
+	}
 	
 	.text-link {
 		color: @textColor;
@@ -269,6 +274,7 @@
 		.spacing-top;
 	}
 	
+	i.icon-blue,
 	.account-panel .outer-border-box h4 i {
 		color: @blue;
 	}
@@ -433,16 +439,26 @@
 	
 	.date-icon-day {
 		font-weight: 100;
+		font-size: 80%;
+		font-family: @sansFontFamily;
+	}
+	
+	.date-icon-month {
+		font-size: 16px;
 	}
 	
 	.date-icon .lead {
 		margin: 0px;
-		line-height: normal;
+		line-height: 17px;
 	}
 	
 	.bookstore-item > div:first-child {
 		line-height: 228px;
 		background: @grayLighter;
+	}
+	
+	.bookstore-item h4 {
+		min-height: 40px;
 	}
 	
 	.more-link {
@@ -527,6 +543,14 @@
 		position: absolute;
 		top: 0px;
 		right: 0px;
+	}
+	
+	.college-information dt {
+		width: 110px;
+	}
+	
+	.college-information dd {
+		margin-left: 125px;
 	}
 	
 	body.home .main-nav .container {
