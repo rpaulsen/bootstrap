@@ -251,6 +251,10 @@
 	.carousel .carousel-indicators .active {
 		display: inline;
 	}
+	
+	.carousel-indicators a:hover {
+		text-decoration: none;
+	}
 
 	.carousel .item {
 		height: 409px;
@@ -332,7 +336,7 @@
 	
 	.home-block-sat {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c2.png);
-		background-color: @colorSAT;
+		background-color: #00BEFC;
 	}
 	
 	.home-block-act {
@@ -347,7 +351,7 @@
 	
 	.home-block-other {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c2.png);
-		background-color: @colorOther;
+		background-color: #FF6800;
 	}
 	
 	.home-block-about {
@@ -365,7 +369,7 @@
 		text-decoration: none;
 	}
 	
-	.home-block h2:hover {
+	.home-block:hover h2 {
 		text-decoration: underline;
 	}
 	
@@ -585,4 +589,13 @@
 	body.gmat #content > h2:first-child {
 		color: @colorOther;
 		border-color: @colorOther;
+	}
+	
+	@media (min-width: 768px) and (max-width: 979px) {
+	
+		#featured .span4 {
+			width: 352px;
+			margin-left: 392px;
+		}
+	
 	}
