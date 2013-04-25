@@ -55,6 +55,11 @@
 	@verticalGutter: 15px;
 	@altFontFamilyHeavy: "Avenir LT W01 85 Heavy";
 	
+	hr {
+		margin: 10px 0;
+		border-top: @hrWidth solid @hrBorder;
+	}
+	
 	.table th, th, strong, dt, .label, .badge {
 		font-family: 'HelveticaNeueW01-65Medi';
 		font-weight: 100;
@@ -115,6 +120,10 @@
 		border: none;
 	}
 	
+	.left-rail .active {
+		text-decoration: underline;
+	}
+	
 	.icon-facebook-sign {
 		color: #3B5998;
 	}
@@ -145,6 +154,15 @@
 		text-shadow: none;
 		font-size: 18px;
 		color: #333;
+		font-weight: 100;
+	}
+	
+	.main-nav .active {
+		background: #F2F2F2;
+	}
+	
+	.main-nav .nav-collapse .dropdown-menu a {
+		font-weight: 100;
 	}
 	
 	.medium {
@@ -156,7 +174,7 @@
 	}
 	
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 100;
+		font-weight: normal;
 		font-family: @altFontFamilyHeavy;
 		.medium {
 			font-family: @altFontFamily;
@@ -203,8 +221,13 @@
 		line-height: normal;
 	}
 	
-	.right-rail .drop-shadow-box > div {
+	.right-rail .drop-shadow-box > div,
+	.drop-shadow-box-grey > div {
 		background: @grayLighter;
+	}
+	
+	.drop-shadow-box-grey hr {
+		border-color: @grayLight;
 	}
 	
 	.main-links {
@@ -263,30 +286,31 @@
 	}
 	
 	.drop-shadow {
-		.box-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
+		.box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
 	}
 	
 	.drop-shadow-box {
-		.box-shadow(0px 1px 4px rgba(0, 0, 0, 0.35));
-		.border-radius(5px);
+		.box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+		.border-radius(@baseBorderRadius);
 	}
 
-	.outer-border-box {
-		padding: 5px;
-		.border-radius(10px);
+	.outer-border-box,
+	.drop-shadow-box-border {
+		padding: 3px;
+		.border-radius(7px);
 		background: @grayLighter;
 	}
 	
 	.outer-border-box > *,
 	.drop-shadow-box > * {
 		.clearfix;
-		.border-radius(5px);
-		background: white;
+		.border-radius(@baseBorderRadius);
+		background: @white;
 		padding: 15px;
 	}
 	
-	.outer-border-box > * {
-		.drop-shadow;
+	.drop-shadow-box > * {
+		.border-radius(@baseBorderRadius);
 	}
 	
 	.carousel .outer-border-box {
@@ -322,7 +346,7 @@
 	
 	.home-block {
 		padding: 0px @verticalGutter 0px @verticalGutter;
-		height: 200px;
+		height: 175px;
 		color: white;
 		display: block;
 		background-repeat: no-repeat;
@@ -333,10 +357,51 @@
 	@colorACT: #3D7200;
 	@colorAcademic: #6E8831;
 	@colorOther: #ac5426;
+	@colorAccentRed: #7b0309;
+	
+	.accent-blue-background {
+		background: @colorSAT;
+	}
+	
+	.accent-green-background {
+		background: @colorACT;
+	}
+	
+	.accent-light-green-background {
+		background: @colorAcademic;
+	}
+	
+	.accent-orange-background {
+		background: @colorOther;
+	}
+	
+	.accent-red-background {
+		background: @colorAccentRed;
+	}
+	
+	.accent-blue {
+		color: @colorSAT;
+	}
+	
+	.accent-green {
+		color: @colorACT;
+	}
+	
+	.accent-light-green {
+		color: @colorAcademic;
+	}
+	
+	.accent-orange {
+		color: @colorOther;
+	}
+	
+	.accent-red {
+		color: @colorAccentRed;
+	}
 	
 	.home-block-sat {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c2.png);
-		background-color: #00BEFC;
+		background-color: @colorSAT;
 	}
 	
 	.home-block-act {
@@ -346,22 +411,37 @@
 	
 	.home-block-academic {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r6_c7.png);
-		background-color: @colorAcademic;
+		background-color: @colorOther;
 	}
 	
 	.home-block-other {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c2.png);
-		background-color: #FF6800;
+		background-color: @colorAccentRed;
 	}
 	
 	.home-block-about {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c5.png);
-		background-color: #A90E2C;
+		background-color: #70493D;
 	}
 	
 	.home-block-jed {
 		background-image: url(/media/images/home/applerouth-00-home-v0-3-8_r8_c7.png);
 		background-color: #2C2C11;
+	}
+	
+	.home-block-materials {
+		background-image: url(/media/images/home/prepmaterials.png);
+		background-color: #728974;
+	}
+	
+	.home-block-educators {
+		background-image: url(/media/images/home/educators.png);
+		background-color: #81377E;
+	}
+	
+	.home-block-mocks {
+		background-image: url(/media/images/home/smiling_classroom.png);
+		background-color: @colorAcademic;
 	}
 	
 	.home-block:hover {
@@ -378,12 +458,12 @@
 		padding-bottom: 0px;
 		font-size: 24px;
 		text-shadow: 1px 1px 1px #000;
-		margin-bottom: 0px;
+		margin-bottom: 7px;
+		line-height: normal;
 	}
 	
 	.home-block p {
 		width: 90%;
-		font-family: @altFontFamily;
 		font-size: 16px;
 	}
 	
@@ -412,16 +492,28 @@
 		color: @textColor;
 	}
 	
+	.nav-tabs > .active > a.base-gold,
+	.nav-tabs > li > a.base-gold {
+		font-color: @textColor;
+		background-color: #EDDA74;
+	}
+	
 	.underline {
 		border-bottom: 2px solid @grayLight;
 	}
 	
 	.solid-box {
 		padding: 15px;
+		display: block;
 		.border-radius(5px);
 		.drop-shadow;
 		color: white;
 		.lead;
+	}
+	
+	a.solid-box:hover {
+		text-decoration: none;
+		color: white;
 	}
 	
 	.solid-box-green {
@@ -449,18 +541,19 @@
 	}
 	
 	.date-icon-day {
-		font-weight: 100;
-		font-size: 80%;
-		font-family: @sansFontFamily;
+		font-size: 11px;
+		line-height: 11px;
+		margin-bottom: 5px;
 	}
 	
 	.date-icon-month {
 		font-size: 16px;
+		line-height: 17px;
 	}
 	
-	.date-icon .lead {
-		margin: 0px;
-		line-height: 17px;
+	.date-icon-date {
+		font-size: 22px;
+		line-height: 20px;
 	}
 	
 	.bookstore-item > div:first-child {
@@ -586,9 +679,11 @@
 	body.ssat #content > h2:first-child,
 	body.sat-subjects #content > h2:first-child,
 	body.gre #content > h2:first-child,
-	body.gmat #content > h2:first-child {
-		color: @colorOther;
-		border-color: @colorOther;
+	body.gmat #content > h2:first-child,
+	body.lsat #content > h2:first-child,
+	body.mcat #content > h2:first-child {
+		color: @colorAccentRed;
+		border-color: @colorAccentRed;
 	}
 	
 	@media (min-width: 768px) and (max-width: 979px) {
@@ -598,4 +693,8 @@
 			margin-left: 392px;
 		}
 	
+	}
+	
+	.row-fluid ul.thumbnails li.row-0 {
+		margin-left: 0px;
 	}

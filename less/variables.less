@@ -13,14 +13,14 @@
 @grayDarker:            #222;
 @grayDark:              #333;
 @gray:                  #555;
-@grayLight:             #525252;
+@grayLight:             #564d41;
 @grayLighter:           #eee;
 @white:                 #fff;
 
 
 // Accent colors
 // -------------------------
-@blueDark:              #105A8D;
+@blueDark:              #2D6987;
 @blue:                  lighten(@blueDark, 3);
 @green:                 #227d00;
 @red:                   #9D1100;
@@ -32,7 +32,7 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        #FCFCFC;
 @textColor:             @grayDark;
 
 
@@ -51,10 +51,10 @@
 @baseFontSize:          14px;
 @baseFontFamily:        @sansFontFamily;
 @baseLineHeight:        20px;
-@altFontFamily:         "Avenir LT W01 65 Medium";
+@altFontFamily:         "Avenir LT W01 65 Medium", Helvetica, Arial, sans-serif;
 
 @headingsFontFamily:    @altFontFamily; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    100;    // instead of browser default, bold
+@headingsFontWeight:    normal;    // instead of browser default, bold
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
 
@@ -178,13 +178,13 @@
 
 // Navbar
 // -------------------------
-@navbarCollapseWidth:             979px;
+@navbarCollapseWidth:             767px;
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight:                    40px;
-@navbarBackgroundHighlight:       #ffffff;
-@navbarBackground:                #ffffff;
-@navbarBorder:                    #ffffff;
+@navbarBackgroundHighlight:       @bodyBackground;
+@navbarBackground:                @bodyBackground;
+@navbarBorder:                    @bodyBackground;
 
 @navbarText:                      #777;
 @navbarLinkColor:                 #777;
