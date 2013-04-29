@@ -301,6 +301,10 @@
 		background: @grayLighter;
 	}
 	
+	.drop-shadow-box-border > * {
+		.box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+	}
+	
 	.outer-border-box > *,
 	.drop-shadow-box > * {
 		.clearfix;
@@ -317,10 +321,6 @@
 		background: rgba(0, 0, 0, 0.3);
 	}
 	
-	.account-panel .outer-border-box {
-		.spacing-top;
-	}
-	
 	i.icon-blue,
 	.account-panel .outer-border-box h4 i {
 		color: @blue;
@@ -329,7 +329,7 @@
 	.account-widget-heading {
 		font-size: 16px;
 		line-height: normal;
-		.border-radius(5px);
+		.border-top-radius(5px);
 		background: @blue;
 		color: white;
 		font-family: @altFontFamily;
@@ -541,7 +541,7 @@
 	}
 	
 	.date-icon-day {
-		font-size: 11px;
+		font-size: 10px;
 		line-height: 11px;
 		margin-bottom: 5px;
 	}
@@ -697,4 +697,67 @@
 	
 	.row-fluid ul.thumbnails li.row-0 {
 		margin-left: 0px;
+	}
+	
+	@media print {
+		
+		.ui-buttons {
+			display: none;
+		}
+		
+		.noprint {
+			display: none;	
+		}
+		
+		#email-link-wrapper a {
+			display: none;
+		}
+			
+		#email-link-wrapper:after {
+			content: "info@applerouth.com";
+		}
+		
+		.ui-tabs,
+		.ui-tabs .ui-tabs-hide {
+			border: 0;
+			margin: 0;
+			padding: 0;
+			display: block !important;
+		}
+		
+		.ui-tabs-nav {
+			display: none;
+		}
+
+		.ui-tabs .ui-widget-content, 
+		.ui-accordion .ui-widget-content, 
+		.ui-dialog .ui-widget-content {
+			overflow: visible;
+		}
+
+		.blog-title a[href]:after,
+		.blog-byline a[href]:after {
+			content: none;
+		}
+		
+		.drop-shadow-box ul
+		.drop-shadow-box ol {
+			margin-left: 250px;
+		}
+
+	}
+	
+	.video-link .title {
+		background: @colorSAT;
+		.border-top-radius(5px);
+		.truncate;
+		font-size: @fontSizeSmall;
+	}
+	
+	.video-link img {
+		.border-radius(@baseBorderRadius);
+	}
+	
+	.video-problemquestion .title {
+		background: @colorOther;
 	}
